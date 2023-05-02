@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Ajouter un post</h2>
+  <form #registerForm="ngForm" (ngSubmit)="addpost(registerForm)">
+    <div class="form-group">
+      <label>Type de publication</label>
+
+      <select name="typePublication" ngModel [(ngModel)]="pub.typePublication">
+        <option value="TEXT"><textarea name="text" id="idPub" cols="30" rows="10"></textarea>Text</option>
+        <option value="PHOTO">photo</option>
+        <option value="VIDEO">video</option>
+      </select>
+
+
+    </div>
+    <div class="form-group">
+      <label for="content">Contenu</label>
+      <textarea class="form-control" id="content" [(ngModel)]="pub.content" name="content" required></textarea>
+    </div>
+    <label>Image</label>
+    <input type="file" id="file" #file="ngModel" ngModel name="file" (change)="onFileSelected($event)" >
+    <button type="button" (click)="addpost(registerForm)" class="btn btn-primary" >Partager</button>
+  </form>
+</div>

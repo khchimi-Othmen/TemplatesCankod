@@ -1,0 +1,14 @@
+<form>
+
+  <div class="form-group">
+    <label>Reaction</label>
+    <select name="type" [(ngModel)]="react.typeReaction">
+      <option value="LIKE">like</option>
+      <option value="DISLIKE">dislake</option>
+      <option value="LAUGH">laugh</option>
+      <option value="SAD">sad</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="addreact()">Submit</button>
+</form>
