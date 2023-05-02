@@ -1,0 +1,133 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Valid information is required to register. <span class="req"><small></small></span></legend>
+                           <div class="col-md-6 mb-3">
+
+                         <div class="form-group">
+                                    
+                                    <label class="text-center" for="adress"><span class="req">* </span> Name: <small>This is the  adress of the delivery
+                                            </small> </label>
+                                    <input required type="text" [(ngModel)]="Delivery.adress" name="adress" id="adress"
+                                        class="form-control phone" maxlength="28" placeholder="Enter the adress..." />
+                                </div></div>
+                    
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                               <label class="text-center"  for="adress"><span class="req">* </span> Name: <small>This is the  poids of the delivery
+                                                       </small> </label>
+                                               <input required type="number" [(ngModel)]="Delivery.poids" name="poids" id="poids"
+                                                   class="form-control phone" maxlength="28" placeholder="Enter the poids..." />
+                                           </div></div>
+            
+
+                                           <div class="col-md-6 mb-3">
+                                            <div class="form-group">
+                                                       <label class="text-center"  for="prix livraison"><span class="req">* </span> Name: <small>This is the  prix  livraison
+                                                               </small> </label>
+                                                       <input required type="number" [(ngModel)]="Delivery.prixLivraison" name="prix livraison" id="prix livraison"
+                                                           class="form-control phone" maxlength="28" placeholder="Enter the prix livraison..." />
+                                                   </div></div>
+                                                   
+                                                   <div class="col-md-6 mb-3">
+                                                    <div class="form-group">
+                                                               <label class="text-center" for="etat"><span class="req">* </span> Name: <small>This is the  etat livraison
+                                                                       </small> </label>
+                                                               <input required type="number" [(ngModel)]="Delivery.etat" name="etat" id="etat"
+                                                                   class="form-control phone" maxlength="28" placeholder="Enter the etat.." />
+                                                           </div></div>
+                                                           
+        
+
+                                <div class="form-group">
+                                    <label class="text-center"  for="enumeration">* Select a type de livraison :</label>
+                                    <select id="enumeration"  [(ngModel)]="Delivery.deliveryType"  name="enumeration"  id="deliveryType">
+                                        <option >Normal</option>
+                                        <option >Express</option>
+                                    </select>
+
+                                   
+
+                                </div>
+                                <div class="form-group">
+                                    <label  class="text-center" for="enumeration">* Select a status :</label>
+                                    <select id="enumeration"  [(ngModel)]="Delivery.deliveryStatus"  name="enumeration"  id="deliveryStatus">
+                                        <option >  Delivered </option>
+                                        <option >still</option>
+                                        <option >cancelled</option>
+                                    </select>
+                                </div>
+                  
+
+                                <div class="form-group">
+                                    
+                                    <label class="text-center"  for="deliveryDate"><span class="req">* </span> Name: <small>This is the  Date of the delivery
+                                            </small> </label>
+                                    <input required type="date" [(ngModel)]="Delivery.deliveryDate" name="myDate" id="myDate"/>
+                                       
+                                </div>
+
+
+<!--
+                    <div class="form-group">
+                        <label for="etat "><span class="req">* </span> etat </label>
+                        <input class="form-control" type="text" [(ngModel)]="Delivery.etat" name="etat" id="txt" required
+                            placeholder="entrer l'etat du livraison" />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poids"><span class="req">* </span> deliveryType : </label>
+                        <input class="form-control" type="number" [(ngModel)]="Delivery.poids" name="epoids" id="number"
+                            placeholder="Total year of experience" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Date"><span class="req">* </span> deliveryDate: </label>
+                        <input class="form-control" required type="text" [(ngModel)]="Delivery.deliveryDate" name="deliveryDate"
+                            id="Date" placeholder="deliveryDate" name="deliveryDate" />
+                        <div class="deliveryDate" name="deliveryDate" id="deliveryDate" name="deliveryDate"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="Date"><span class="req">* </span> Developer: </label>
+                            <input class="form-control" required type="text" [(ngModel)]="Delivery.deliveryDate" name="deliveryDate"
+                                id="Date" placeholder="deliveryDate" name="deliveryDate" />
+                            <div class="deliveryDate" name="deliveryDate" id="deliveryDate" name="deliveryDate"></div>
+                        </div>
+-->
+
+
+                        <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerNow()">
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-success"type="submit" value="random" (click)="randemdelivery()">
+                    </div>
+                </fieldset>
+            </form>
+            
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+  

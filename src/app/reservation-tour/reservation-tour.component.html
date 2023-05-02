@@ -1,0 +1,78 @@
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Valid information is required to register. <span class="req"><small>
+                                required *</small></span></legend>
+                           <div class="col-md-6 mb-3">
+
+                         <div class="form-group">
+                                    
+                                    <label for="adress"><span class="req">* </span> Name: <small>This is the  nb a reserver
+                                            </small> </label>
+                                    <input required type="text" [(ngModel)]="TourReservation.nbareserver" name="nb a reserver" id="nb a reserver"
+                                        class="form-control phone" maxlength="28" placeholder="Enter the adress..." />
+                                       
+                                </div>
+                            </div>
+
+                    <div class="form-group">
+                        <label for="date "><span class="req"></span> emplaceent du tour a reserver  </label>
+                        <input class="form-control" type="text" [(ngModel)]="TourReservation.location" name="location" id="txt" required
+                            placeholder="Enter valid location " />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname"><span class="req">* </span> guide : </label>
+                        <input class="form-control" type="text" [(ngModel)]="TourReservation.guide" name="experience" id="txt"
+                            placeholder=" enter the guide associée guide" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration"><span class="req">* </span> Developer: </label>
+                        <input class="form-control" required type="text" [(ngModel)]="TourReservation.durationR" name="domain"
+                            id="duration" placeholder="la durée" />
+                        <div class="status" id="status"></div>
+                    </div>
+
+               
+<!--
+                    <div class="form-group">
+                        <label for="date "><span class="req"></span> id tour a reserver   </label>
+                        <input class="form-control" type="number" [(ngModel)]="tourId" name="location" id="txt" required
+                            placeholder="Enter valid location " />
+                        <div id="errFirst"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date "><span class="req"></span> id user a reserver   </label>
+                        <input class="form-control" type="number" [(ngModel)]="userId" name="location" id="txt" required
+                            placeholder="Enter valid location " />
+                        <div id="errFirst"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date "><span class="req"></span> nbAreserver  </label>
+                        <input class="form-control" type="number" [(ngModel)]="nbAreserver" name="location" id="txt" required
+                            placeholder="Enter valid location " />
+                        <div id="errFirst"></div>
+                    </div>
+
+-->
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerNow()">
+                    </div>
+                </fieldset>
+            </form>
+            
+        </div>
+
+
+    </div>
+</div>

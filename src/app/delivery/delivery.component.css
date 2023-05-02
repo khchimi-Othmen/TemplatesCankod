@@ -1,0 +1,38 @@
+
+.text-center {
+    color: rgb(240, 235, 235); /* Remplacez "red" par la couleur de votre choix */
+  }
+  
+
+
+
+ .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  /*.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+ */
+input {
+  margin: 40px;  
+  width: 200px;   
+}
+ 
+
