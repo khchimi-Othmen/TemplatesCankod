@@ -1,0 +1,53 @@
+
+
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+      <div class="bg-secondary rounded h-100 p-4">
+            <form>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                    <legend class="text-center">Valid information is required to register. <span class="req"><small>
+                                required *</small></span></legend>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="Name"><span class="req">* </span> Name: <small>This will be The Center Name</small> </label>
+                        <input required type="text" [(ngModel)]="Center.name" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter The Center Name" />
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label for="number"><span class="req">* </span> number of places available: </label>
+                        <input class="form-control" type="number" [(ngModel)]="Center.number" name="number" id="txt" required
+                           />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label for="State"><span class="req">* </span> State : </label>
+                        <input class="form-control" type="text" [(ngModel)]="Center.state" name="state" id="txt"
+                            placeholder="Available Or Not" required />
+                        <div id="errLast"></div>
+                    </div>
+                  
+                    <div class="col-md-12 mb-3">
+                        <label for="price"><span class="req">* </span> Price: </label>
+                        <input class="form-control" type="number" [(ngModel)]="Center.price" name="price" id="txt" required
+                         placeholder=" Price In Dinar " />
+                     
+                         <div id="errFirst"></div>
+                    </div>
+                    <div class="col-md-20 mb-3">
+                    <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3">
+                        <input class="btn btn-danger btn-xs" type="submit" name="submit_reg" value="Register" (click)="registerNow()">
+                   </div>
+                    </div>
+                </div>
+                </div>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>

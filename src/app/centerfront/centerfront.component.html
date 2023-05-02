@@ -1,0 +1,73 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="card-row">
+  <div class="card-col" *ngFor="let center of centers">
+    <mat-card>
+      <img class="card-img" mat-card-image [src]="getImagePath(center)" alt="{{ center.name }}" >
+      <mat-card-content>
+        <h2 class="card-title" mat-card-title>{{center.name}}</h2>
+        <p class="card-subtitle" mat-card-subtitle> number of places available: {{center.number}}</p>
+        <p class="card-content" mat-card-content> Price : {{center.price}}</p>
+        <p class="card-content" mat-card-content> Rating : {{center.rating}}</p>
+      </mat-card-content>
+      <mat-card-actions class="card-actions">
+        <div class ="star-rating ">
+        <ngx-star-rating class="a"  [(ngModel)]="center.rating" maxStarRating="5" (click)="change(center)" [id]="center.idcenter" activeColor="#ffd055" readOnly="true"  fullIcon="fas fa-star" emptyIcon="far fa-star"   >
+        </ngx-star-rating>
+        </div>
+        <button mat-button class="btn btn-danger"  (click)="getActivitiesForCenter(center.idcenter)">Details</button>
+        
+      </mat-card-actions>
+      <button type="submit" (click)="onSubmit(center.idcenter)">Submit Reservation</button> 
+         
+    </mat-card>
+    <div class="container-fluid pt-4 px-4">
+      <div class="row g-4">
+        <div class="bg-secondary rounded h-100 p-4">
+    <form>
+    
+      <label for="nbReservationCenter">Number of reservations for center:</label>
+      <input type="number" name="nbReservationCenter" [(ngModel)]="reservation.nbReservationCenter" required>
+      <label for="nbReservationActivity">Number of reservations for activity:</label>
+      <input type="number" name="nbReservationActivity" [(ngModel)]="reservation.nbReservationActivity" required>
+      
+    </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="centers?.length == 0" class="col-12 text-center my-4">
+  <h3>No centers found</h3>
+</div>
+
+
+
+<div *ngIf="editing">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="card-row">
+  <legend class="text-center">This is the Ativities Of Our Center <span class="req"></span></legend>
+  <div class="card-col" *ngFor="let a of activities">
+  
+    <mat-card>
+      <img class="card-img" mat-card-image [src]="getImagePathA(a)" alt="{{ a.activityType }}" >
+      <mat-card-content>
+        <h2 class="card-title" mat-card-title>{{a.location}}</h2>
+        <p class="card-content" mat-card-content> Price : {{a.priceA}}</p>
+        <p class="card-content" mat-card-content> ActivityType : {{a.activityType}}</p>
+        <p class="card-content" mat-card-content> startDate : {{a.startDate}}</p>
+        <p class="card-content" mat-card-content> endDate : {{a.endDate}}</p>
+      </mat-card-content>
+      <mat-card-actions class="card-actions">
+      </mat-card-actions>
+    </mat-card>
+    
+  </div>
+</div>
+
+</div>
+
+
+
+

@@ -1,0 +1,91 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-12" style="text-align: center">
+                                    <input type="text" placeholder="  Search With Center Name "  name="name" [(ngModel)]="name"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button" (click)="SearchCenter()">
+                                           search
+                                        </button>
+                                    </span>
+                                </div>
+                                <br>   <a class="btn btn-danger" routerLink="/admin/addCenter"><i class="bi bi-plus"></i> Add Center</a>
+                            </div>
+    </div>
+    </div>
+  
+    
+<div class="container">
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>State</th>
+            <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Center of centers">
+            <td>{{Center.idcenter}}</td>
+            <td>{{Center.name}}</td>
+            <td>{{Center.number}}</td>
+            <td>{{Center.price}}</td>
+            <td>{{Center.rating}}</td>
+            <td>{{Center.state}}</td>
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteCenter(Center.idcenter)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            <td class="text-center"><button class="btn btn-danger btn-xs"(click)="editCenter(Center)">     Edit</button></td>
+          </tr>
+    </tbody>
+    </table>
+    <div *ngIf="editing">
+    <form>
+        <fieldset>
+            <legend class="text-center">Valid information is required to register. <span class="req"><small>
+                        required *</small></span></legend>
+
+            <div class="form-group">
+                <label for="Name"><span class="req">* </span> Name: <small>This will be The Center Name</small> </label>
+                <input required type="text" [(ngModel)]="Center.name" name="name" id="name"
+                    class="form-control phone" maxlength="28" placeholder="Enter your Center Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="number"><span class="req">* </span> number of places available: </label>
+                <input class="form-control" type="number" [(ngModel)]="Center.number" name="number" id="txt" required
+                   />
+                <div id="errFirst"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="State"><span class="req">* </span> State : </label>
+                <input class="form-control" type="text" [(ngModel)]="Center.state" name="state" id="txt"
+                    placeholder="Available Or Not" required />
+                <div id="errLast"></div>
+            </div>
+          
+            <div class="form-group">
+                <label for="price"><span class="req">* </span> Price: </label>
+                <input class="form-control" type="number" [(ngModel)]="Center.price" name="price" id="txt" required
+                 placeholder=" Price In Dinar " />
+             
+                 <div id="errFirst"></div>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-danger btn-xs" type="submit" name="submit_reg" value="Register" (click)="registerNow()">
+            </div>
+        </fieldset>
+    </form>
+</div>
+    </div>
+</div>

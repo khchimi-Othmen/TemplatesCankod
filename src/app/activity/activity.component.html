@@ -1,0 +1,39 @@
+<div class="container-fluid pt-4 px-4">
+  <div class="row g-4">
+    <div class="bg-secondary rounded h-100 p-4">
+<form >
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" class="form-control" id="location" name="location" [(ngModel)]="newActivity.location" required  placeholder="Location" >
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" name="price" [(ngModel)]="newActivity.priceA" required>
+    </div>
+    <div class="form-group">
+        <label for="activityType">Activity Type</label>  
+            <select class="form-control" id="activityType" name="activityType"[(ngModel)]="newActivity.activityType" required >
+              <option *ngFor="let type of activityTypes " [value]="type">{{type}}</option>
+            </select>
+         
+    </div>
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="newActivity.startDate" required>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="newActivity.endDate" required>
+    </div>
+    <div class="col-md-20 mb-3">
+      <div class="col-md-12 mb-3">
+    <div class="col-md-12 mb-3">
+    <button type="submit" class="btn btn-primary"  (click)="registerNow() ">   Submit</button>
+    </div>
+      </div>
+    </div>
+    
+  </form>
+    </div>
+  </div>
+</div>
