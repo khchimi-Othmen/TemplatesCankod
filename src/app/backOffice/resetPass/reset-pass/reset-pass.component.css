@@ -1,0 +1,90 @@
+  /* Set the background color */
+  body {
+    background-color: #f8f9fa;
+  }
+
+  /* Add some style to the container */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Add some style to the heading */
+  h1 {
+    margin-top: 0;
+    font-size: 32px;
+    text-align: center;
+    color: #333;
+  }
+
+  /* Add some style to the paragraph */
+  p {
+    margin-bottom: 32px;
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+  }
+
+  /* Add some style to the form */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Add some style to the label */
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Add some style to the input fields */
+  input[type="text"],
+  input[type="password"] {
+    padding: 16px;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  /* Add some style to the input fields when they receive focus */
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Add some style to the submit button */
+  button[type="submit"] {
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  /* Add some style to the submit button when hovering over it */
+  button[type="submit"]:hover {
+    background-color: #0069d9;
+  }

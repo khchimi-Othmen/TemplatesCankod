@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Password Reset Example</h1>
+    <p>Please enter your information:</p>
+    <form>
+      <label for="idUser">User ID:</label>
+      <input type="text" id="idUser" [(ngModel)]="idUser" name="idUser" required>
+
+      <label for="token">Token:</label>
+      <input type="text" id="token" [(ngModel)]="token" name="token" required>
+
+      <label for="newPassword">New Password:</label>
+      <input type="text" id="newPassword" [(ngModel)]="password" name="newPassword" required>
+
+      <button type="submit"(click)="ResetPass(idUser,token,password)" [routerLink]="['/signin']">Reset Password</button>
+    </form>
+  </div>
