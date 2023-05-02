@@ -1,0 +1,74 @@
+
+
+
+      <!-- Contact Start -->
+      <div class="container-xxl py-5">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+              <div class="bg-secondary p-5">
+                <p class="d-inline-block bg-dark text-primary py-1 px-4">Book A Transport</p>
+                <h1 class="text-uppercase mb-4">Book,Travel,Feel The Freedom</h1>
+                
+                <form (ngSubmit)="Transport()" id="transport-form">
+                  <div class="row g-3">
+                  
+                    <div class="col-12">
+                        <div class="form-floating">
+                          <input required type="text" [(ngModel)]="transport.idTransport"  name="idTransport" id="message" class="form-control bg-transparent" style="height: 100px"  />
+                          <label for="message">idTransport</label>
+                        </div>
+                      </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input required type="text" id="departure-input"  [(ngModel)]="transport.departure" name="departure" id="message" class="form-control bg-transparent" style="height: 100px"  />
+                        <label for="message">Departure</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" [(ngModel)]="transport.destination"  name="destination" id="destination" class="form-control bg-transparent" style="height: 100px" />
+
+                          <label for="message">Destination</label>
+                        </div>
+                      </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                          <input class="form-control bg-transparent" required type="date" [(ngModel)]="transport.dateTransport" name="dateFeedback" id="dateFeedback" />
+                          <label for="dateTransport">dateTransport:</label>
+                          <div class="status" id="status"></div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating">
+                          <input required type="text" [(ngModel)]="transport.nombrePlaces" name="nombrePlaces" id="message" class="form-control bg-transparent" style="height: 100px"  />
+                          <label for="message"> nombrePlaces</label>
+                        </div>
+                      </div>
+      
+                    <div class="col-12">
+                      <div class="form-group">
+                        <button class="btn btn-primary" type="submit" name="submit_reg">Submit</button>
+                      </div>
+                    </div>
+              
+                </div>
+                </form>
+                
+                <button class="btn btn-warning"(click)="calculateRoute()">Calculate Route</button>
+
+              </div>
+              <div class=" wow fadeIn bg-secondary" id="directions-panel"></div>
+        </div>
+        <div class="col-lg-6 wow fadeIn bg-secondary p-5" data-wow-delay="0.5s">
+          
+          <div class="h-100" style="min-height: 400px;">
+            <div class="google-map w-100 h-100"id="map" style="height: 400px;"frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></div>
+          
+
+          </div>
+  
+                
+
+      
+ 

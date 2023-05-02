@@ -1,0 +1,28 @@
+
+    <div class="col-12">
+      <h2>Feedback List</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let feedback of feedbackList">
+            <td>{{ feedback.idFeedback }}</td>
+            <td>{{ feedback.sub }}</td>
+            <td>{{ feedback.description }}</td>
+            <td>{{ feedback.dateFeedback }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteFeedback(feedback.idFeedback)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+    

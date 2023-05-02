@@ -1,0 +1,58 @@
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="bg-secondary p-5">
+          <div class="col-md-6">
+            <div class="form-floating">
+          <input class="form-control bg-transparent" placeholder="Departure" type="text" [(ngModel)]="x.departure">
+          <label>Departure</label>
+        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating">
+    <input class="form-control bg-transparent" placeholder="Departure" type="text" [(ngModel)]="x.destination">
+    <label>Destination</label>
+  </div>
+</div>
+  <button class="btn btn-success" (click)="search(x.departure, x.destination)">Get Transports</button>
+  
+<h2>Transport List</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Departure</th>
+      <th>Destination</th>
+      <th>Date</th>
+      <th>Nombre Places</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transport of transportlist">
+      <td>{{ transport.idTransport }}</td>
+      <td>{{ transport.departure }}</td>
+      <td>{{ transport.destination }}</td>
+      <td>{{ transport.dateTransport }}</td>
+      <td>{{ transport.nombrePlaces }}</td>
+      <td>
+        <button class="btn btn-warning" (click)="reserveTicket(transport)">Reserver</button>
+        <div ><ul></ul></div>
+        <button class="btn btn-primary" (click)="showMap(transport.departure,transport.destination)">Show Map</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+
+<div class="col-lg-6 wow fadeIn bg-secondary p-5" data-wow-delay="0.5s">
+          
+  <div class="h-100" style="min-height: 400px;">
+    <div class="google-map " id="map" style="width: 100%; height: 500px; filter: grayscale(0%)  invert(0%) contrast(83%);border: 0 "></div>
+  </div>
+  

@@ -1,0 +1,116 @@
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Feedback List</h6>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Subject</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let feedback of feedbackList">
+                        <td>{{ feedback.idFeedback }}</td>
+                        <td>{{ feedback.sub }}</td>
+                        <td>{{ feedback.description }}</td>
+                        <td>{{ feedback.dateFeedback }}</td>
+                        <td>
+                          <button class="btn btn-danger" (click)="deleteFeedback(feedback.idFeedback)">Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Transport List</h6>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                  <input class="form-control bg-transparent" placeholder="Departure" type="text" [(ngModel)]="transport.departure">
+                  <label>Departure</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+            <input class="form-control bg-transparent" placeholder="Departure" type="text" [(ngModel)]="transport.destination">
+            <label>Destination</label>
+          </div>
+        </div>
+          <button class="btn btn-success" (click)="search(transport.departure, transport.destination)">Get Transports</button>        
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Departure</th>
+              <th>Destination</th>
+              <th>Date</th>
+              <th>Nombre Places</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transport of transportlist">
+              <td>{{ transport.idTransport }}</td>
+              <td>{{ transport.departure }}</td>
+              <td>{{ transport.destination }}</td>
+              <td>{{ transport.dateTransport }}</td>
+              <td>{{ transport.nombrePlaces }}</td>
+            
+            <td>        
+              <button class="btn btn-danger"(click)="deleteTransport(transport.idTransport)" >Delete</button>
+           </td>
+          </tr>
+      
+          </tbody>
+        </table>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Ticket List</h6>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>distance</th>
+                            <th>prix</th>
+                            <th>transport</th>
+                            <th>Actions</th>
+                    
+                        </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let Ticket of ticketlist">
+                            <td>{{ Ticket. idTransportTicket}}</td>
+                            <td>{{ Ticket.distance }}</td>
+                            <td>{{ Ticket.prix }}</td>
+                            <td><ul>
+                                <li><label>Id :</label>{{ Ticket.transport.idTransport }}</li>
+                                <li><label>Departure :</label>{{ Ticket.transport.departure }}</li>
+                                <li><label>Destination :</label>{{ Ticket.transport.destination }}</li>
+                                <li><label>Date :</label>{{ Ticket.transport.dateTransport }}</li>
+                            </ul></td>
+                      
+                            <td>
+                                <div ><ul></ul></div>
+                        
+                              <button class="btn btn-danger"(click)="deletetickets(Ticket.idTransportTicket)" >Delete</button>
+                            </td>
+                            <td>
+                                <div ><ul></ul></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                </div>
+            </div>
+        </div>

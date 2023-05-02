@@ -1,0 +1,43 @@
+<div class="container-xxl py-5">
+    <div class="container">
+      <div class="row g-0">
+          <div class="bg-secondary p-5">
+    <div class="form-floating">
+  <h2>Ticket List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>distance</th>
+        <th>prix</th>
+        <th>transport</th>
+        <th>Actions</th>
+        <th>Actions</th>
+
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Ticket of ticketlist">
+        <td>{{ Ticket. idTransportTicket}}</td>
+        <td>{{ Ticket.distance }}</td>
+        <td>{{ Ticket.prix }}</td>
+        <td><ul>
+            <li><label>Id :</label>{{ Ticket.transport.idTransport }}</li>
+            <li><label>Departure :</label>{{ Ticket.transport.departure }}</li>
+            <li><label>Destination :</label>{{ Ticket.transport.destination }}</li>
+            <li><label>Date :</label>{{ Ticket.transport.dateTransport }}</li>
+        </ul></td>
+  
+        <td>
+            <div ><ul></ul></div>
+    
+          <button class="btn btn-primary rounded-0 py-2 px-lg-4 d-none d-lg-block"(click)="deletetickets(Ticket.idTransportTicket)" >Delete</button>
+        </td>
+        <td>
+            <div ><ul></ul></div>
+          <button class="btn btn-success rounded-0 py-2 px-lg-4 d-none d-lg-block"(click)="QrCode(Ticket.idTransportTicket)" >Download QrCode</button>         
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

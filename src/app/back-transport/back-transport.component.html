@@ -1,0 +1,48 @@
+
+  
+    <div class="col-12">
+            <div class="col-md-6">
+              <div class="form-floating">
+            <input class="form-control bg-transparent" placeholder="Departure" type="text" [(ngModel)]="transport.departure">
+            <label>Departure</label>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating">
+      <input class="form-control bg-transparent" placeholder="Departure" type="text" [(ngModel)]="transport.destination">
+      <label>Destination</label>
+    </div>
+  </div>
+    <button class="btn btn-success" (click)="search(transport.departure, transport.destination)">Get Transports</button>
+    
+  <h2>Transport List</h2>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Departure</th>
+        <th>Destination</th>
+        <th>Date</th>
+        <th>Nombre Places</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transport of transportlist">
+        <td>{{ transport.idTransport }}</td>
+        <td>{{ transport.departure }}</td>
+        <td>{{ transport.destination }}</td>
+        <td>{{ transport.dateTransport }}</td>
+        <td>{{ transport.nombrePlaces }}</td>
+      
+      <td>        
+        <button class="btn btn-danger"(click)="deleteTransport(transport.idTransport)" >Delete</button>
+     </td>
+    </tr>
+
+    </tbody>
+  </table>
+  
+  
+  

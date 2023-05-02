@@ -1,0 +1,116 @@
+
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+              <div class="bg-secondary p-5">
+                <p class="d-inline-block bg-dark text-primary py-1 px-4">Contact Us</p>
+                <h1 class="text-uppercase mb-4">Have Any Feedbacks? Please Don't hesitate to let Us Know!</h1>
+                
+                <form (ngSubmit)="Feedback()" id="feedback-form">
+                  <div class="row g-3">
+                   
+      
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <select required [(ngModel)]="feedback.sub" name="sub" id="name" class="form-control bg-transparent">
+                            <option value="">--Please select a subject--</option>
+                            <option value="Technical_Issue ">Technical_Issue</option>
+                            <option value="Centre_and_Activity">Centre_and_Activity</option>
+                            <option value="Online_Store">Online_Store</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Forum">Forum</option>
+                          </select>
+                          
+                        <label for="name">Feedback subject</label>
+                      </div>
+                    </div>
+      
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input required type="text" [(ngModel)]="feedback.description" name="Description" id="message" class="form-control bg-transparent" style="height: 100px"  />
+                        <label for="message">Feedback Description</label>
+                      </div>
+                    </div>
+      
+                    <div class="col-12">
+                        <div class="form-floating">
+                          <input class="form-control bg-transparent" required type="date" [(ngModel)]="feedback.dateFeedback" name="dateFeedback" id="dateFeedback" />
+                          <label for="dateFeedback">dateFeedback:</label>
+                          <div class="status" id="status"></div>
+                        </div>
+                      </div>
+                      
+      
+                    <div class="col-12">
+                      <div class="form-group">
+                        <button class="btn btn-primary" type="submit" name="submit_reg">Submit</button>
+                      </div>
+                    </div>
+               
+                </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 wow fadeIn bg-secondary p-5" data-wow-delay="0.5s">
+          
+          <div class="container mt-4">
+            <h2>Feedback List</h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Subject</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let feedback of feedbackList">
+                  <td>{{ feedback.idFeedback }}</td>
+                  <td>{{ feedback.sub }}</td>
+                  <td>{{ feedback.description }}</td>
+                  <td>{{ feedback.dateFeedback }}</td>
+                  <td>
+                    <button class="btn btn-warning" (click)="onUpdate(feedback)">Update</button>
+                    <button class="btn btn-primary" (click)="deleteFeedback(feedback.idFeedback)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+          </div>
+          
+            
+           </div>
+      </div>
+                
+         
+    </div>
+        
+      </div>
+      
+    <!-- Contact End -->
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
