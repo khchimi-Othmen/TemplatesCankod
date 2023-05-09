@@ -34,13 +34,13 @@ import {SimpleDashComponent} from "./pages/back/dashboard/simple-dash/simple-das
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
-  { path: 'mat', component: MainComponent },
+  // { path: 'mat', component: MainComponent },
 
   {
     path: 'admin',
     component: AllTemplateAdminComponent,
     children: [
-      { path: '', component: BodyAdminComponent },
+      { path: '', component: SimpleDashComponent },
       { path: 'items', component: ItemsComponent },
       { path: 'add', component: AddItemsComponent },
       { path: 'edit/:id', component: EditItemsComponent },

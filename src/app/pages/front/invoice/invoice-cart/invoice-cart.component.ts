@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 export class InvoiceCartComponent implements OnInit {
 
   commandDto: CommandDto = new CommandDto();
-  totalCost: number = 0;
+  totalCost: number = 10;
 
   constructor(private commandService: CommandService,
               private router: Router) { }
@@ -26,7 +26,7 @@ export class InvoiceCartComponent implements OnInit {
     });
 
     // Use a timer to update the total cost every 5 seconds
-    timer(0, 500000).subscribe(() => {
+    timer(0, 3000).subscribe(() => {
       this.commandService.calculateTotalCostForPendingCommands().subscribe((data) => {
         this.totalCost = data;
       }, error => {
@@ -46,12 +46,11 @@ export class InvoiceCartComponent implements OnInit {
   finalizeCommand() {
     this.commandService.finalizeCommand().subscribe(() => {
       console.log('Command finalized successfully');
-      setTimeout(() => {
-        this.router.navigate(['/user/store']);
-      }, 3000); // 3 seconds delay before redirecting to the main page
+      this.router.navigate(['user/store']); // Redirect to the store page directly
     }, (error) => {
       console.error('Error finalizing command:', error);
     });
   }
+
 
 }

@@ -12,13 +12,10 @@ import { ClipboardService } from 'ngx-clipboard';
   styleUrls: ['./cmd.component.css'],
 })
 export class CmdComponent implements OnInit {
-  protected readonly CommandTypeEnum = CmdType;
-  commandList: CommandDto[];
+  commandList!: any;
   searchValue: string;
   CmdType = CmdType;
   isCopied = false;
-  currentPage = 1;
-  itemsPerPage = 6;
   constructor(
     private commandService: CommandService,
     private router: Router,
@@ -31,7 +28,7 @@ export class CmdComponent implements OnInit {
   }
 
   getAllCommands(): void {
-    this.commandService.getAllCommands().subscribe((data: CommandDto[]) => {
+    this.commandService.getAllCommands().subscribe((data) => {
       this.commandList = data;
       console.log(data);
     });
@@ -65,11 +62,6 @@ export class CmdComponent implements OnInit {
     setTimeout(() => {
       this.isCopied = false;
     }, 1000);
-  }
-  get totalPages(): number[] {
-    const totalCmds = this.commandList.length;
-    const totalPages = Math.ceil(totalCmds / this.itemsPerPage);
-    return Array(totalPages).fill(0).map((x, i) => i + 1);
   }
 
 }

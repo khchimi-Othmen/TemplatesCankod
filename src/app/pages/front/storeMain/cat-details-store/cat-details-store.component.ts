@@ -17,7 +17,7 @@ export class CatDetailsStoreComponent implements OnInit {
   id: number;
   productList: ProductDto[];
   currentPage = 1;
-  itemsPerSlide = 12;
+  itemsPerSlide = 8;
   totalSlides: number;
   autoSlideInterval: any;
 

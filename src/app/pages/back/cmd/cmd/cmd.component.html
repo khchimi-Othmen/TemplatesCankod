@@ -1,5 +1,5 @@
 <div class="container mt-2 ">
-  <!-- Search bar -->
+<!--  &lt;!&ndash; Search bar &ndash;&gt;-->
   <div class="row justify-content-center my-4">
     <div class="col-md-6">
       <div class="input-group" style="width: 100%;">
@@ -9,7 +9,7 @@
     </div>
   </div>
   <!-- Command list -->
-  <div class="card bg-light rounded p-3 mb-3 " *ngFor="let command of commandList.slice((currentPage-1)*itemsPerPage, currentPage*itemsPerPage) ">
+  <div class="card bg-light rounded p-3 mb-3 " *ngFor="let command of commandList ">
     <div class="card-body">
       <div class="row">
         <!-- Left block -->
@@ -31,7 +31,7 @@
               <span class="ms-2 fw-bold">Weight</span>
             </div>
             <div class="col-auto ms-auto">
-<!--              {{ command. }}-->
+              {{ command.weight }}
             </div>
           </div>
           <div class="row mb-2">
@@ -54,7 +54,7 @@
               <span class="ms-2 fw-bold">Charity</span>
             </div>
             <div class="col-auto ms-auto">
-              <a href="{{ command.charity.website }}" target="_blank">{{ command.charity.website }}</a>
+<!--              <a href="{{ command.charity.website }}" target="_blank">{{ command.charity.website }}</a>-->
             </div>
           </div>
         </div>
@@ -132,7 +132,9 @@
               <span class="ms-2 fw-bold command-info-label" aria-label="Payment Method">Name</span>
             </div>
             <div class="col-auto ms-auto command-info-value">
-              {{ command.user.nom }}
+                            {{ command.user.nom }}
+                            {{ command.user.prenom }}
+
             </div>
           </div>
           <div class="row mb-2">
@@ -147,10 +149,10 @@
           <div class="row mb-2">
             <div class="col-auto">
               <i class="fas fa-phone text-danger"></i>
-              <span class="ms-2 fw-bold command-info-label" aria-label="Payment Method">Phone</span>
+              <span class="ms-2 fw-bold command-info-label" aria-label="Payment Method">loyaltyPts</span>
             </div>
             <div class="col-auto ms-auto command-info-value">
-              {{ command.user.prenom }}
+              {{ command.user.loyaltyPts }}
             </div>
           </div>
           <div class="row mb-2">
@@ -159,7 +161,7 @@
               <span class="ms-2 fw-bold command-info-label" aria-label="Payment Method">Address</span>
             </div>
             <div class="col-auto ms-auto command-info-value">
-              {{ command.user.prenom }}
+<!--              {{ command.user.prenom }}-->
             </div>
           </div>
         </div>
@@ -170,18 +172,5 @@
     </div>
   </div>
 
-  <!-- pagination buttons -->
-  <div class="row justify-content-center my-4">
-    <div class="col-md-6">
-      <div class="btn-toolbar d-flex justify-content-center" role="toolbar">
-        <div class="btn-group me-2" role="group">
-          <!-- Generate pagination buttons based on the total number of pages -->
-          <button *ngFor="let page of totalPages" type="button" class="btn btn-primary"
-                  [class.active]="currentPage === page"
-                  (click)="currentPage = page">{{page}}</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 

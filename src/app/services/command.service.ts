@@ -40,8 +40,8 @@ export class CommandService {
     return this.http.get<CommandDto>(`${this.baseUrl}/getCommandById/${commandNumber}`);
   }
 
-  getAllCommands(): Observable<CommandDto[]> {
-    return this.http.get<CommandDto[]>(`${this.baseUrl}/getAllCommands`);
+  getAllCommands(){
+    return this.http.get<any[]>(`${this.baseUrl}/getAllCommands`);
   }
   getAllC(): Observable<CommandDto[]> {
     return this.http.get<CommandDto[]>(`${this.baseUrl}/getAllC`);

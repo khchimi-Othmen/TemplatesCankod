@@ -1,7 +1,15 @@
 <div class="container mt-4">
-  <button class="btn btn-primary" (click)="getTotalRevenue()">Get Total Revenue</button>
-  <div *ngIf="totalRevenue !== undefined" class="mt-4">
-    <h4>Total Revenue:</h4>
-    <h2 class="text-success">{{ totalRevenue | currency:'USD':'symbol':'1.2-2' }}</h2>
+  <div class="row justify-content-center">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Total Revenue</h5>
+          <button class="btn btn-primary d-block mx-auto mb-3" (click)="getTotalRevenue()">Calculate</button>
+          <div *ngIf="totalRevenue !== undefined">
+            <h2 class="card-text text-success text-center">{{ totalRevenue | currency:'USD':'symbol':'1.2-2' }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
